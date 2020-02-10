@@ -1,4 +1,8 @@
 .completed {
     text-decoration: line-through;
-    color: gray;
+    color: #d875757a;
+}
+
+li {
+    padding: 2px;
 }
