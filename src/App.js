@@ -1,4 +1,5 @@
 import React from 'react';
+import './App.css';
 import TodoForm from './components/TodoComponents/TodoForm';
 import TodoList from './components/TodoComponents/TodoList';
 
@@ -6,39 +7,50 @@ class App extends React.Component {
   constructor(){
     super();
     this.state = {
-      userInput: "test test",
-      todos: [
-        {
-          task: 'cook dinner',
-          id: Date.now(),
-          completed: false
-        },
-        {
-          task: 'prepare for tomorrow\'s lecture',
-          id: Date.now(),
-          completed: false
-        }    
-      ]   
+      todos: []   
     } 
   }
 
  addToDo = (task) => {
-    this.setState((state, newItem) => {
-      return [...state, newItem]
+
+    const newTask = {
+      id: Date.now(),
+      completed: false,
+      task: task
+    }
+
+    this.setState({todos: [...this.state.todos, newTask]})
+  };
+  
+  toggleCompleted = (id) => {
+    const newList = this.state.todos.map(item => {
+      if (item.id === id){
+        return {
+          ...item,
+          completed: !item.completed
+        }
+      } else {
+        return item;
+      }
+    });
+    this.setState({todos: newList});
+  };
+
+  clearCompleted = () => {
+    const filtered = this.state.todos.filter(item => {
+      return item.completed === false;
     })
+    this.setState({todos: filtered})
   }
 
- handleChange = (event) => {
-    this.setState({userInput: event.target.value});
-  };
  
   render() {
     return (
-      <div>
+      <div className="app">
         <h2>Welcome to your Todo App!</h2>
-        <h3>{this.state.userInput}</h3>
-        <TodoList list={this.state.todos}/>
-        <TodoForm addToDo={this.addToDo} handleChange={this.handleChange}/>
+
+        <TodoList list={this.state.todos} toggleCompleted={this.toggleCompleted}/>
+        <TodoForm addToDo={this.addToDo} clearCompleted={this.clearCompleted} />
       </div>
     );
   }
