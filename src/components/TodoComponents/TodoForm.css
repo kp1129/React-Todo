@@ -9,7 +9,7 @@ form {
 .userInput {
     border-radius: 3px;
     border: 2px solid palevioletred;
-    min-height: 25px;
+    min-height: 1.75rem;
     color: #20193b;
     width: 95%;
     font-size: 1.15rem;
