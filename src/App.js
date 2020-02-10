@@ -10,7 +10,7 @@ class App extends React.Component {
       todos: []   
     } 
   }
-  
+
  addToDo = (task) => {
 
     const newTask = {
@@ -48,6 +48,11 @@ class App extends React.Component {
     return (
       <div className="app">
         <h1>to do list</h1>
+        <div className={this.state.todos.length === 0 ? "" : "instructions"}>
+        <p>- add tasks you need to get done</p>
+        <p>- click on finished items to cross them off</p>
+        <p>- clear completed items off the list</p>
+        </div>
 
         <TodoList list={this.state.todos} toggleCompleted={this.toggleCompleted}/>
         <TodoForm addToDo={this.addToDo} clearCompleted={this.clearCompleted} />

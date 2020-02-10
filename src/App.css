@@ -16,4 +16,14 @@ h1 {
     font-family: 'Dancing Script', cursive;
     font-size: 3.75rem;
 }
+p {
+    color: #d875757a;
+    text-align: center;
+    font-size: 1.05rem;
+    font-family: 'Lato', sans-serif;
+}
+
+.instructions {
+    display: none;
+}
 
