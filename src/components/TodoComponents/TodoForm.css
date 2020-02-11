@@ -43,3 +43,10 @@ form {
     cursor: pointer;    
    
 }
+
+.error {
+    color: #d12d2d;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}

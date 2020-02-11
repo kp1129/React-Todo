@@ -15,8 +15,14 @@ class TodoForm extends React.Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
-        this.props.addToDo(this.state.userInput);
-        this.setState({userInput: ""});
+        if(this.state.userInput.trim() === "") {
+            document.querySelector('.error').innerHTML = "Can't add blank tasks!";
+        } else {
+            document.querySelector('.error').innerHTML = "";
+            this.props.addToDo(this.state.userInput);
+            this.setState({userInput: ""});
+        }
+        
     }
     
 
@@ -25,7 +31,8 @@ class TodoForm extends React.Component {
             <div>
                 <form onSubmit={this.handleSubmit}>
                 <input className='userInput' type='text' placeholder='// add task to do' value={this.state.userInput} onChange={this.handleChange}/>
-                {console.log(this.state.userInput)}
+                <p className="error"></p>
+               
              
                 <input className='submitBtn' type='submit' value='Add'/>
                 <input className='clearBtn' type='button' value='Clear Completed' onClick={this.props.clearCompleted} />
