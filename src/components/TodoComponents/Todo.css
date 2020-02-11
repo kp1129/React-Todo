@@ -1,0 +1,9 @@
+.completed {
+    text-decoration: line-through;
+    color: #d875757a;
+}
+
+li {
+    padding: 2px;
+    cursor: pointer;
+}

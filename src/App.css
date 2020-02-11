@@ -1,0 +1,28 @@
+.app {
+    background-color: #f9cbb1;
+    padding: 1rem;
+    min-height: 31.25rem;
+    max-width: 25rem;
+    margin: 12% auto auto auto;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    font-size: 1.5rem;
+    color: #d66464;
+}
+
+h1 {
+    color: palevioletred;
+    text-align: center;
+    font-family: 'Dancing Script', cursive;
+    font-size: 3.75rem;
+}
+p {
+    color: #d875757a;
+    text-align: center;
+    font-size: 1.05rem;
+    font-family: 'Lato', sans-serif;
+}
+
+.instructions {
+    display: none;
+}
+
